@@ -1,35 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
+import USAMap from "react-usa-map";
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import List from './components/List.jsx';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      items: []
-    }
-  }
+class App extends Component {
+  /* mandatory */
+  mapHandler = (event) => {
+    alert(event.target.dataset.name);
+  };
 
-  componentDidMount() {
-    $.ajax({
-      url: '/items', 
-      success: (data) => {
-        this.setState({
-          items: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
-  }
-
-  render () {
-    return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-    </div>)
+  render() {
+    return (
+      <div className="App">
+        <USAMap onClick={this.mapHandler} />
+      </div>
+    );
   }
 }
 
