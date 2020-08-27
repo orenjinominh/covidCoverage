@@ -4,7 +4,8 @@
 
 ## Summary ##
   > Relevant statistics include:
-    > Total number of COVID-19 related deaths. 
+    - Total number of COVID-19 related deaths per state.
+    - 
 
 ## Problem ##
   > Describe the problem your product solves.
