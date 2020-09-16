@@ -12,38 +12,39 @@ db.once('open', function() {
 });
 
 var covidDataByStateAndRaceSchema = mongoose.Schema({
+  date: String,
   state: String,
-  cases_total: Number,
-  cases_white: Number,
-  cases_black: Number,
-  cases_LatinX: Number,
-  cases_Asian: Number,
-  cases_AIAN: Number,
-  cases_NHPI: Number,
-  cases_Multiracial: Number,
-  cases_Others: Number,
-  cases_Unknown: Number,
-  cases_Ethnicity_Hispanic: Number,
-  cases_Ethnicity_NonHispanic: Number,
-  cases_Ethnicity_Unknown: Number,
-  deaths_total: Number,
-  deaths_White: Number,
-  deaths_Black: Number,
-  deaths_LatinX: Number,
-  deaths_Asian: Number,
-  deaths_NHPI: Number,
-  deaths_Multiracial: Number,
-  deaths_Others: Number,
-  deaths_Unknown: Number,
-  deaths_Ethnicity_Hispanic: Number,
-  deaths_Ethnicity_NonHispanic: Number,
-  deaths_Ethnicity_Unknown: Number
+  cases_total: String,
+  cases_white: String,
+  cases_black: String,
+  cases_LatinX: String,
+  cases_Asian: String,
+  cases_AIAN: String,
+  cases_NHPI: String,
+  cases_Multiracial: String,
+  cases_Others: String,
+  cases_Unknown: String,
+  cases_Ethnicity_Hispanic: String,
+  cases_Ethnicity_NonHispanic: String,
+  cases_Ethnicity_Unknown: String,
+  deaths_total: String,
+  deaths_White: String,
+  deaths_Black: String,
+  deaths_LatinX: String,
+  deaths_Asian: String,
+  deaths_NHPI: String,
+  deaths_Multiracial: String,
+  deaths_Others: String,
+  deaths_Unknown: String,
+  deaths_Ethnicity_Hispanic: String,
+  deaths_Ethnicity_NonHispanic: String,
+  deaths_Ethnicity_Unknown: String
 });
 
-var stateInfo = mongoose.model('stateInfo', covidDataByStateAndRaceSchema);
+var StateInfo = mongoose.model('stateInfo', covidDataByStateAndRaceSchema);
 
 var selectAll = function(callback) {
-  stateInfo.find({}, function(err, items) {
+  StateInfo.find({}, function(err, items) {
     if(err) {
       callback(err, null);
     } else {
