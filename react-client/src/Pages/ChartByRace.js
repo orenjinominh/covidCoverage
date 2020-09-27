@@ -1,7 +1,14 @@
-import React from "react"
+import React from 'react';
+
+import Input from '../components/Input.jsx';
 
 function ChartByRace() {
-  return <h1>Chart By Race</h1>
+  return (
+    <div>
+      <h1>Chart By Race</h1>
+      <Input></Input>
+    </div>
+  )
 }
 
-export default ChartByRace; 
+export default ChartByRace;
