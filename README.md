@@ -1,26 +1,22 @@
 # COVID COVERAGE USA #
   > A data visualization of relevant COVID-19 related statistics in the U.S, including the states of Alaska and Hawaii.
 
-
 ## Summary ##
   > Relevant statistics include:
-    - Total number of COVID-19 related deaths per state.
-    - 
+    - Total number of COVID-19 related deaths per state, as recent as September 2020.
+    - Deaths are broken down by race: White, Black, LatinX, Asian, NHPI, Multiracial, Other, or unknown.
+    - Some states do not have complete data by racial breakdown and will state so on the state's modal.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > This application seeks to visualize for its users the COVID death rate among the US population, per state, per racial category.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Users can click on each state of the SVG map of the United States in order to view state-specific COVID related data, and explore the breakdown of total deaths by race.
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > TBD
 
-## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Visit https://covidtracking.com/race for more information. The COVID Racial Data Tracker is a collaboration between the COVID Tracking Project and the Boston University Center for Antiracist Research.

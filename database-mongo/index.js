@@ -12,33 +12,17 @@ db.once('open', function() {
 });
 
 var covidDataByStateAndRaceSchema = mongoose.Schema({
-  date: String,
+  date: Number,
   state: String,
-  cases_total: String,
-  cases_white: String,
-  cases_black: String,
-  cases_LatinX: String,
-  cases_Asian: String,
-  cases_AIAN: String,
-  cases_NHPI: String,
-  cases_Multiracial: String,
-  cases_Others: String,
-  cases_Unknown: String,
-  cases_Ethnicity_Hispanic: String,
-  cases_Ethnicity_NonHispanic: String,
-  cases_Ethnicity_Unknown: String,
-  deaths_total: String,
-  deaths_White: String,
-  deaths_Black: String,
-  deaths_LatinX: String,
-  deaths_Asian: String,
-  deaths_NHPI: String,
-  deaths_Multiracial: String,
-  deaths_Others: String,
-  deaths_Unknown: String,
-  deaths_Ethnicity_Hispanic: String,
-  deaths_Ethnicity_NonHispanic: String,
-  deaths_Ethnicity_Unknown: String
+  deaths_total: Number,
+  deaths_White: Number,
+  deaths_Black: Number,
+  deaths_LatinX: Number,
+  deaths_Asian: Number,
+  deaths_NHPI: Number,
+  deaths_Multiracial: Number,
+  deaths_Others: Number,
+  deaths_Unknown: Number
 });
 
 var StateInfo = mongoose.model('stateInfo', covidDataByStateAndRaceSchema);

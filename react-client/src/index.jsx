@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
-import USAMap from "react-usa-map";
-import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDom from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-class App extends Component {
-  /* mandatory */
-  mapHandler = (event) => {
-    alert(event.target.dataset.name);
-  };
+import App from './Pages/App.jsx';
 
-  render() {
-    return (
-      <div className="App">
-        <USAMap onClick={this.mapHandler} />
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDom.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById('app')
+);
