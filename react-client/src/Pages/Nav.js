@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Nav() {
   return (
     <nav>
-        <h3>Navigate here</h3>
+        <h4>Navigate here</h4>
         <ul>
           <Link to='/contact'>
             <li>Contact</li>

@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import Select from "react-select";
 
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-];
+import {stateHash} from '../stateHash.js';
 
-function Input() {
+const options = [...stateHash];
+
+function StateInput() {
   const [selectedOption, setSelectedOption] = useState(null);
 
   return (
-    <div className="App">
+    <div className="state-selector">
+      <p>Please select a state from the dropdown below:</p>
       <Select
         defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={options}
+        isSearchable={true}
       />
     </div>
   );
 }
 
-export default Input;
+export default StateInput;

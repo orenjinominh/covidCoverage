@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Input from '../components/Input.jsx';
+import StateInput from '../components/StateInput.jsx';
 
 function ChartByRace() {
   return (
     <div>
-      <h1>Chart By Race</h1>
-      <Input></Input>
+      <h4>Racial Breakdown By State</h4>
+      <StateInput></StateInput>
     </div>
   )
 }
