@@ -1,24 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import Select from "react-select";
 
 import {stateHash} from '../stateHash.js';
+import Chart from '../Components/Chart.jsx';
 
 const options = [...stateHash];
 
-function StateInput() {
-  const [selectedOption, setSelectedOption] = useState(null);
+class StateInput extends React.Component {
 
-  return (
-    <div className="state-selector">
-      <p>Please select a state from the dropdown below:</p>
-      <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-        isSearchable={true}
-      />
-    </div>
-  );
+  state = {
+    selectedOption: null,
+  };
+
+  handleChange = selectedOption => {
+    this.setState(
+      { selectedOption },
+      () => console.log(`Option selected:`, this.state.selectedOption)
+    );
+  };
+  render() {
+    const { selectedOption } = this.state;
+
+    return (
+      <div>
+        <Select
+          value={selectedOption}
+          onChange={this.handleChange}
+          options={options}
+        />
+        <Chart></Chart>
+
+      </div>
+
+    );
+  }
 }
 
 export default StateInput;

@@ -40,10 +40,6 @@ export const stateHash = [
       label: "DC"
   },
   {
-      value: "Federated States Of Micronesia",
-      label: "FM"
-  },
-  {
       value: "Florida",
       label: "FL"
   },
@@ -90,10 +86,6 @@ export const stateHash = [
   {
       value: "Maine",
       label: "ME"
-  },
-  {
-      value: "Marshall Islands",
-      label: "MH"
   },
   {
       value: "Maryland",
@@ -154,10 +146,6 @@ export const stateHash = [
   {
       value: "North Dakota",
       label: "ND"
-  },
-  {
-      value: "Northern Mariana Islands",
-      label: "MP"
   },
   {
       value: "Ohio",
