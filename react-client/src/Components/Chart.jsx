@@ -28,25 +28,65 @@ const data = {
 	}]
 };
 
+// const Chart = (props) => {
+
+
+//   const [option, setOption] = useState([]);
+
+//   console.log('chart props here', this.props);
+//   let {id} = this.props;
+
+//   useEffect(() => {
+
+//     $.ajax({
+//       url: `http://localhost:3000/${id}`,
+//       success: (data) => {
+//         setOption(data[0]);
+
+//       },
+//       error: (err) => {
+//         console.log('err', err);
+//       }
+//     });
+
+//   }, []);
+
+//   return (
+//     <div>
+//       <Doughnut data={data} />
+//     </div>
+
+//   )
+
+
+// }
+
+
+
+
 class Chart extends React.Component {
   constructor(props) {
     super(props);
-    this.chartReference = React.createRef();
+    // this.chartReference = React.createRef();
   }
 
-  // componentDidMount() {
-  //   console.log(this.chartReference); // returns a Chart.js instance reference
-  // }
+  componentDidMount() {
+    // console.log(this.chartReference); // returns a Chart.js instance reference
+    console.log('donut state', this.props.selected);
+  }
 
   render() {
-    console.log('donut state', this.props.selectedOption);
-    <h2>Deaths By Race Per State</h2>
+
+
     return (
-      <Doughnut data={data} />
+      <div>
+        <p>{this.props.selected}</p>
+        <Doughnut data={data} />
+      </div>
+
     )
   }
 }
 
-
-
 export default Chart;
+

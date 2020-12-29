@@ -20,7 +20,7 @@ function App() {
         <Nav />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/ChartByRace' component={ChartByRace} />
+          <Route path='/chartByRace' component={ChartByRace} />
           <Route path='/contact' component={Contact} />
 
         </Switch>

@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
-const covidDataByStateAndRaceSchema = mongoose.Schema({
+const covidDataByStateAndRaceSchema = new mongoose.Schema({
   date: Number,
   state: String,
   deaths_total: Number,

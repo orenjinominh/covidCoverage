@@ -1,6 +1,6 @@
 export const stateHash = [
   {
-      value: "Alabama",
+      value: "AL",
       label: "AL"
   },
   {

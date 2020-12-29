@@ -6,9 +6,7 @@ mongoose.connect('mongodb://localhost/covidData', {
   useCreateIndex: true
 });
 
-let db = mongoose.connection;
-
-const statPerState = require('./StateInfo.js');
+var db = mongoose.connection;
 
 db.on('error', function() {
   console.log('mongoose connection error');

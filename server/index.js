@@ -1,14 +1,16 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const getDataByState =require('../database-mongo/query.js');
+var express = require('express');
+var bodyParser = require('body-parser');
+var { getDataByState } = require('../database-mongo/query.js');
 
 
-const app = express();
+var app = express();
 
 app.use(express.static(__dirname + '/../react-client/dist'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
-
-app.get('/:id', function (req, res) {
+app.get('/chartByRace/:id', function (req, res) {
+  console.log('param id here', req.params.id);
   getDataByState(req.params.id, (data) => {
     res.status(200).json(data);
     res.end();
