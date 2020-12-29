@@ -1,6 +1,6 @@
 import React from "react";
 import Select from "react-select";
-
+import $ from 'jquery';
 import {stateHash} from '../stateHash.js';
 import Chart from '../Components/Chart.jsx';
 
@@ -17,7 +17,9 @@ class StateInput extends React.Component {
       { selectedOption },
       () => console.log(`Option selected:`, this.state.selectedOption)
     );
+
   };
+
   render() {
     const { selectedOption } = this.state;
 
@@ -28,8 +30,7 @@ class StateInput extends React.Component {
           onChange={this.handleChange}
           options={options}
         />
-        <Chart></Chart>
-
+        <Chart />
       </div>
 
     );

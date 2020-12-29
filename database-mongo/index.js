@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/covidData');
 
-const db = mongoose.connect(mongoUri, {
+mongoose.connect('mongodb://localhost/covidData', {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true
 });
 
-mongoose.set('useCreateIndex', true);
+let db = mongoose.connection;
 
-const statPerState = require('./statPerState.js');
+const statPerState = require('./StateInfo.js');
 
 db.on('error', function() {
   console.log('mongoose connection error');
