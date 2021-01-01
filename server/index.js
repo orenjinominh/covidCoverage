@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/chartByRace/:id', function (req, res) {
   console.log('param id here', req.params.id);
   getDataByState(req.params.id, (data) => {
+    console.log('data here to server layer?', data);
     res.status(200).json(data);
     res.end();
   })

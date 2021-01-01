@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/covidData', {
+mongoose.connect('mongodb://localhost:27017/covidData', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true

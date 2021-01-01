@@ -50,7 +50,7 @@ class StateInput extends React.Component {
       console.log(response.data);
     })
     .catch(function (error) {
-      console.log(error);
+      console.log('error on front end side', error);
     })
   }
 
