@@ -21,7 +21,7 @@ class StateInput extends React.Component {
         'Multiracial',
         'NHPI',
         'Other',
-        'Unknown'
+        'Unknown',
         'White'
       ],
       datasets: [{
@@ -46,14 +46,56 @@ class StateInput extends React.Component {
     return axios.get(`http://localhost:3000/chartByRace/${id}`
     )
     .then(function (response) {
-      console.log('response data here', response.data);
-      //parse and update state here
-      // do we use total? 
-      // what happens if any field is NAN?
+      // console.log('response data here', response.data);
 
+      let stats = Object.values(response.data);
+
+      let filterStats = (stats) => {
+        for (var i = 0; i < stats.length; i++) {
+          if (stats[i] === null) {
+            stats[i] = 0;
+          }
+        }
+        return stats;
+      }
+
+      let filtered = filterStats(stats);
+
+      console.log('filtered here', filtered);
+      
+      let newDonutState = {
+        labels: [
+          'White',
+          'Black',
+          'LatinX',
+          'Asian',
+          'AIAN',
+          'NHPI',
+          'Multiracial',
+          'Others',
+          'Unknown'
+        ],
+        datasets: [{
+          data: filtered,
+          backgroundColor: [
+          '#AFB42B',
+          '#F0F4C3',
+          '#CDDC39',
+          '#212121',
+          '#FFEB3B',
+          '#212121',
+          '#757575',
+          '#BDBDBD',
+          '#4B8D3B'
+          ]
+        }]
+      }
+
+      return newDonutState;
     })
+    .then(newDonutState => this.setState({ data: newDonutState }))
     .catch(function (error) {
-      console.log('error on front end side', error);
+      console.log('error retrieving dataset for state', error);
     })
   }
 

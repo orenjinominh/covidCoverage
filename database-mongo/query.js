@@ -5,7 +5,7 @@ const getDataByState = (id, cb) => {
   state = this.toString();
   StateInfo.findOne(
     {State: id, Date: 20200913},
-    {Date: 0, State: 0}
+    {Date: 0, State: 0, _id: 0, Deaths_Total: 0}
     )
   .exec((error, data) => {
 
