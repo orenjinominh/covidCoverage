@@ -14,17 +14,18 @@ class StateInput extends React.Component {
     selectedOption: null,
     data: {
       labels: [
-        'White',
+        'AIAN',
+        'Asian',
         'Black',
         'LatinX',
-        'Asian',
-        'NHPI',
         'Multiracial',
-        'Others',
+        'NHPI',
+        'Other',
         'Unknown'
+        'White'
       ],
       datasets: [{
-        data: [300, 50, 100, 50, 300, 200, 20, 10],
+        data: [300, 50, 100, 50, 300, 200, 20, 10, 10],
         backgroundColor: [
         '#AFB42B',
         '#F0F4C3',
@@ -33,21 +34,23 @@ class StateInput extends React.Component {
         '#FFEB3B',
         '#212121',
         '#757575',
-        '#BDBDBD'
+        '#BDBDBD',
+        '#4B8D3B'
         ]
       }]
     }
   };
 
-  // this.fetchDataByState = this.fetchDataByState.bind(this);
 
   fetchDataByState = (id) => {
-    console.log('state here', id);
-
     return axios.get(`http://localhost:3000/chartByRace/${id}`
     )
     .then(function (response) {
-      console.log(response.data);
+      console.log('response data here', response.data);
+      //parse and update state here
+      // do we use total? 
+      // what happens if any field is NAN?
+
     })
     .catch(function (error) {
       console.log('error on front end side', error);
@@ -59,8 +62,6 @@ class StateInput extends React.Component {
       { selectedOption },
       () => this.fetchDataByState(this.state.selectedOption.label)
     );
-
-    /* eventually: set this.state.data.datasets[0].data to be data pulled from ajax request to server */
 
   };
 
