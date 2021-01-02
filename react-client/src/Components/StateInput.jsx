@@ -25,17 +25,17 @@ class StateInput extends React.Component {
         'White'
       ],
       datasets: [{
-        data: [300, 50, 100, 50, 300, 200, 20, 10, 10],
+        data: [100,100,100,100,100,100,100,100,100],
         backgroundColor: [
-        '#AFB42B',
-        '#F0F4C3',
-        '#CDDC39',
-        '#212121',
-        '#FFEB3B',
-        '#212121',
-        '#757575',
-        '#BDBDBD',
-        '#4B8D3B'
+          '#cddbe7',
+          '#9bb7d0',
+          '#6993b8',
+          '#456f93',
+          '#2e4a62',
+          '#294257',
+          '#253a4e',
+          '#203344',
+          '#172531'
         ]
       }]
     }
@@ -61,8 +61,8 @@ class StateInput extends React.Component {
 
       let filtered = filterStats(stats);
 
-      console.log('filtered here', filtered);
-      
+      // console.log('filtered here', filtered);
+
       let newDonutState = {
         labels: [
           'White',
@@ -78,15 +78,15 @@ class StateInput extends React.Component {
         datasets: [{
           data: filtered,
           backgroundColor: [
-          '#AFB42B',
-          '#F0F4C3',
-          '#CDDC39',
-          '#212121',
-          '#FFEB3B',
-          '#212121',
-          '#757575',
-          '#BDBDBD',
-          '#4B8D3B'
+          '#cddbe7',
+          '#9bb7d0',
+          '#6993b8',
+          '#456f93',
+          '#2e4a62',
+          '#294257',
+          '#253a4e',
+          '#203344',
+          '#172531'
           ]
         }]
       }
@@ -117,6 +117,7 @@ class StateInput extends React.Component {
           onChange={this.handleChange}
           options={options}
         />
+        <p> Racially specific data points that are not reported by each U.S. state will not render to the donut below. </p>
         <Doughnut data={this.state.data} />
       </div>
 
